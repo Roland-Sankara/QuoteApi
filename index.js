@@ -2,8 +2,8 @@ const express = require('express');
 const mongoose = require('mongoose');
 require('dotenv').config();
 
-// Routers
-const quoteRouter = require('./routes/quoteRouter');
+// Quote Route
+const quoteRoute = require('./routes/quoteRoute');
 
 const app = express();
 
@@ -12,7 +12,7 @@ const app = express();
 app.use(express.json());
 
 // Routes for API
-app.use('/quotes',quoteRouter)
+app.use('/quotes',quoteRoute)
 
 
 
