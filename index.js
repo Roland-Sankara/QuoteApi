@@ -17,7 +17,6 @@ app.use(express.json());
 app.use('/quotes',quoteRoute)
 
 
-
 // Connect to Our Database
 const URL = process.env.DB_URL;
 const PORT = process.env.PORT || 3000;
