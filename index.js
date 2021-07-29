@@ -7,7 +7,9 @@ const quoteRoute = require('./routes/quoteRoute');
 
 const app = express();
 
-
+app.get('/', (req,res) => {
+    res.send("Welcome to quote app")
+})
 // Middleware - helps modify the request
 app.use(express.json());
 
