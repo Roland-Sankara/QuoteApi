@@ -18,12 +18,13 @@ app.use('/quotes',quoteRoute)
 
 // Connect to Our Database
 const URL = process.env.DB_URL;
+const PORT = process.env.PORT || 3000;
 mongoose.connect(URL,{ useNewUrlParser: true, useUnifiedTopology: true })
     .then(()=>{
         console.log('Database Connection Established...');
 
         // Start the Server
-        app.listen(3000,()=>{
+        app.listen(PORT,()=>{
             console.log('Server is listening on port 3000 ...')
         })
     })
