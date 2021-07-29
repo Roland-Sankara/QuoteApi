@@ -3,14 +3,20 @@ const mongoose = require('mongoose');
 require('dotenv').config();
 
 // Quote Route
-const quoteRoute = require('./routes/quoteRoute');
+const quoteRoute = require('./routes/quoteRoute.js');
 
 const app = express();
 
 
 // Middleware - helps modify the request
 app.use(express.json());
-
+//CORS
+app.use(function(req, res, next) {
+	res.header('Access-Control-Allow-Origin', '*');
+	res.header('Access-Control-Allow-Methods', 'GET,HEAD,OPTIONS,POST,PUT');
+	res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept, authorization');
+	next();
+});
 // Routes for API
 app.use('/quotes',quoteRoute)
 
