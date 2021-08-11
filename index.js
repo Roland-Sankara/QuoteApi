@@ -2,21 +2,23 @@ const express = require("express");
 const mongoose = require("mongoose");
 require("dotenv").config();
 const cors = require("cors")
-app.use(cors());
 
-//for cross origin resource sharing 
-app.use(function(req, res, next) {
-      res.header("Access-Control-Allow-Origin", "*") //update to match detail you make requests from
-      res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept")
-      res.header("Access-Control-Allow-Methods", "PUT, POST, GET, DELETE, OPTIONS");
-      res.header('Access-Control-Allow-Credentials', true);
-      next();
-  });
+
+
 
 // Quote Route
 const quoteRoute = require("./routes/quoteRoute");
 
 const app = express();
+//for cross origin resource sharing 
+app.use(cors())
+app.use(function(req, res, next) {
+  res.header("Access-Control-Allow-Origin", "*") //update to match detail you make requests from
+  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept")
+  res.header("Access-Control-Allow-Methods", "PUT, POST, GET, DELETE, OPTIONS");
+  res.header('Access-Control-Allow-Credentials', true);
+  next();
+});
 
 app.get("/", (req, res) => {
   res.send("Welcome to quote app");
