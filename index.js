@@ -19,8 +19,9 @@ app.use("/quotes", quoteRoute);
 // Connect to Our Database
 const URL = process.env.DB_URL;
 const PORT = process.env.PORT || 3000;
+
 mongoose
-  .connect(URL, { useNewUrlParser: true, useUnifiedTopology: true })
+  .connect("mongodb+srv://Roland:quote123@quotedb.tvvsk.mongodb.net/Quote-Data?retryWrites=true&w=majority", { useNewUrlParser: true, useUnifiedTopology: true })
   .then(() => {
     console.log("Database Connection Established...");
   })
