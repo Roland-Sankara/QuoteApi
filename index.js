@@ -16,14 +16,14 @@ app.use(function(req, res, next) {
 });
 
 // Routes for API
-app.get("/",(req,res)=>{
-    res.send("Welcome to the Quote API")
+app.get('/',(req,res)=>{
+    res.send('Welcome to the Quote API')
 })
 
 // Middleware - helps modify the request
 app.use(express.json());
 
-app.use("/quotes",quoteRoute);
+app.use('/quotes',quoteRoute);
 
 
 
