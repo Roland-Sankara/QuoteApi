@@ -7,10 +7,6 @@ const quoteRoute = require('./routes/quoteRoute.js');
 
 const app = express();
 
-
-// Middleware - helps modify the request
-app.use(express.json());
-
 //CORS
 app.use(function(req, res, next) {
 	res.header('Access-Control-Allow-Origin', '*');
@@ -23,6 +19,9 @@ app.use(function(req, res, next) {
 app.get('/',(req,res)=>{
     res.send('Welcome to the Quote API')
 })
+
+// Middleware - helps modify the request
+app.use(express.json());
 
 app.use('/quotes',quoteRoute)
 
