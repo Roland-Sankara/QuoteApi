@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const quoteController = require('../controllers/quoteController.js');
+const quoteController = require('../controllers/quoteController');
 
 // Routes of API
 router.get('/', quoteController.getAllQuotes);

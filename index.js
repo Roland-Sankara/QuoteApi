@@ -3,7 +3,7 @@ const mongoose = require('mongoose');
 require('dotenv').config();
 
 // Quote Route
-const quoteRoute = require('./routes/quoteRoute.js');
+const quoteRoute = require('./routes/quoteRoute');
 
 const app = express();
 
@@ -16,14 +16,14 @@ app.use(function(req, res, next) {
 });
 
 // Routes for API
-app.get('/',(req,res)=>{
-    res.send('Welcome to the Quote API')
+app.get("/",(req,res)=>{
+    res.send("Welcome to the Quote API")
 })
 
 // Middleware - helps modify the request
 app.use(express.json());
 
-app.use('/quotes',quoteRoute)
+app.use("/quotes",quoteRoute);
 
 
 
@@ -40,7 +40,7 @@ mongoose.connect(URL,{ useNewUrlParser: true, useUnifiedTopology: true })
 
 // Start the Server
 app.listen(PORT,()=>{
-    console.log(`Server is listening on port ${PORT}...`)
-})
+    console.log(`Server is listening on port ${PORT}...`);
+});
 
 

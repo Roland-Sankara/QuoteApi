@@ -1,5 +1,5 @@
 // Import the Quote Model
-const Quote = require('../models/Quote.js');
+const Quote = require('../Models/Quote');
 
 
 const getAllQuotes = (req,res)=> {
