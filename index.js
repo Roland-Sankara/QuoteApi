@@ -35,12 +35,12 @@ mongoose.connect(URL,{ useNewUrlParser: true, useUnifiedTopology: true })
         console.log('Database Connection Established...');
     })
     .catch(()=>{
-        console.log('Database Connection Failed !!')
-    })
+        console.log('Database Connection Failed !!');
+    });
 
 // Start the Server
 app.listen(PORT,()=>{
-    console.log('Server is listening on port 3000 ...')
+    console.log(`Server is listening on port ${PORT}...`)
 })
 
 
