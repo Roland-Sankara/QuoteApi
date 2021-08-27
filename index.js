@@ -4,6 +4,8 @@ require('dotenv').config();
 
 // Quote Route
 const quoteRoute = require('./routes/quoteRoute');
+// UserRoute
+const userRoute = require('./routes/usersRoute');
 
 const app = express();
 
@@ -15,15 +17,17 @@ app.use(function(req, res, next) {
 	next();
 });
 
+
 // Routes for API
-app.get('/',(req,res)=>{
+app.get('/api/v1/',(req,res)=>{
     res.send('Welcome to the Quote API')
 })
 
 // Middleware - helps modify the request
 app.use(express.json());
 
-app.use('/quotes',quoteRoute);
+app.use('/api/v1/quotes',quoteRoute);
+app.use('/api/v1/users',userRoute);
 
 
 
